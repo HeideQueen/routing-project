@@ -3,11 +3,17 @@ import React from 'react';
 
 import styles from './button.module.css';
 
-function button({ children, link }) {
-  return (
+function button({ children, link, click }) {
+  if (link) {
     <Link href={link}>
       <a className={styles.btn}>{children}</a>
-    </Link>
+    </Link>;
+  }
+
+  return (
+    <button onClick={click} className={styles.btn}>
+      {children}
+    </button>
   );
 }
 
