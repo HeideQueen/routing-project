@@ -5,9 +5,11 @@ import styles from './button.module.css';
 
 function button({ children, link, click }) {
   if (link) {
-    <Link href={link}>
-      <a className={styles.btn}>{children}</a>
-    </Link>;
+    return (
+      <Link href={link}>
+        <a className={styles.btn}>{children}</a>
+      </Link>
+    );
   }
 
   return (
