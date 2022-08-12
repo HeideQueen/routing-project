@@ -1,4 +1,4 @@
-import React from 'react';
+import Head from 'next/head';
 
 import { getEventById, getFeaturedEvents } from '../../helpers/api-util';
 
@@ -17,6 +17,10 @@ function EventDetailPage({ selectedEvent }) {
 
   return (
     <>
+      <Head>
+        <title>{selectedEvent.title}</title>
+        <meta name='description' content={selectedEvent.description} />
+      </Head>
       <EventSummary title={selectedEvent.title} />
       <EventLogistics
         date={selectedEvent.date}
